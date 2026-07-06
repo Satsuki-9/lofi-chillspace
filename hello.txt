@@ -1,0 +1,20 @@
+this is a message to those who find this repository. Usually, I start with a proper greeting
+but for now I won't do much to get straight to the point.
+
+This work is a project done solely for the purpose and requirements of our Web Design and Client-Side scripting.
+I never intended to associate my works towards other projects, and this is inspired towards the management / audio
+novel "game" called "Chill with you: A Lo-Fi Story". 
+
+At first glance, I was a doubtful person to ever try and make the game webbased. I had my limitations all covered
+in all directions like Live2d modelling, JS, and other functions probably away from the scope of what i can do.
+I also draw, but my drawing skills aren't the greaters, nor the ability to shade properly too. I have been really
+dwelling on things I shouldn't be and my pace did change when I stepped into college.
+Further more, I am proud in making this project work, though it has it's flaws, I never wanted to settle this
+project later in the bin.
+
+But as of right now I made this note: 7/6/2026  8:00 am
+I really feel doubtful of all things.
+
+Maybe I'll succeed, if not, then I still have a backup my sleeves. There is just way too much things to handle
+A human can also feel tired anyways.
+
