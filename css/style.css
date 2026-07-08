@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top,#1E293B 0%,#0F172A 60%);
+    color:#F8FAFC;
+    line-height:1.6;
+}
+
+header{
+    background:rgba(17,24,39,.85);
+    backdrop-filter:blur(15px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 0;
+
+}
+
+nav h1{
+    color:#A855F7;
+    font-size:1.8rem;
+    font-weight:700;
+    text-shadow:0 0 20px rgba(168,85,247,.35);
+    transform:translateY(-2px);
+}
+
+nav ul{
+
+    list-style:none;
+    display:flex;
+    gap:30px;
+
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:#38BDF8;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38BDF8;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+button{
+    background:#7C3AED;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:14px 30px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+    font-weight:500;
+    transition:.3s;
+}
+
+button:hover{
+    background:#6D28D9;
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(124,58,237,.35);
+} 
+
+
+#hero{
+    width:90%;
+    max-width:1200px;
+    min-height:90vh;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.hero-left h2{
+    font-size:4.5rem;;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero-left p{
+    font-size:1.2rem;
+    color:#CBD5E1;
+    max-width:480px;
+    margin-bottom:35px;
+}
+
+.hero-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-right img{
+    width:100%;
+    max-width:550px;
+}
+
+.hero-left{
+    flex:1;
+    animation:fadeUp .8s ease;
+    margin-top:-40px;
+}
+
+.hero-right{
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+footer{
+
+    margin-top:100px;
+    padding:50px;
+    text-align:center;
+    color:#CBD5E1;
+    background:#111827;
+
+}
+
+/*======ABOUT=====*/
+
+#about{
+
+    width:90%;
+    max-width:900px;
+    margin:120px auto;
+    text-align:center;
+
+}
+
+#about h2{
+
+    font-size:3rem;
+    margin-bottom:30px;
+
+}
+
+#about p{
+
+    color:#CBD5E1;
+    font-size:1.1rem;
+    line-height:2;
+
+}
+
+/*======FEATURES=====*/
+
+#features{
+
+    width:90%;
+    max-width:1200px;
+    margin:120px auto;
+
+}
+
+#features h2{
+
+    text-align:center;
+    margin-bottom:50px;
+    font-size:3rem;
+
+}
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+
+}
+
+.feature-grid article{
+
+    background:rgba(30,41,59,.75);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:35px;
+    transition:.3s;
+
+}
+
+.feature-grid article:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.feature-grid h3{
+
+    margin-bottom:15px;
+    color:#A855F7;
+
+}
+
+.feature-grid p{
+
+    color:#CBD5E1;
+
+}
+
+/*======PREVIEW=====*/
+
+#preview{
+
+    width:90%;
+    max-width:1000px;
+    margin:140px auto;
+    text-align:center;
+
+}
+
+#preview h2{
+
+    font-size:3rem;
+    margin-bottom:40px;
+
+}
+
+#preview img{
+
+    width:100%;
+    max-width:750px;
+    border-radius:20px;
+    margin-bottom:35px;
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+#preview p{
+
+    color:#CBD5E1;
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+
+}
+
+/*======CTA=====*/
+
+#cta{
+
+    width:90%;
+    max-width:900px;
+    margin:150px auto;
+    text-align:center;
+
+}
+
+#cta h2{
+
+    font-size:3rem;
+    margin-bottom:20px;
+
+}
+
+#cta p{
+
+    color:#CBD5E1;
+    margin-bottom:35px;
+    font-size:1.1rem;
+
+}
+
+@media(max-width:900px){
+
+    nav{
+
+        flex-direction:column;
+        gap:20px;
+
+    }
+
+    #hero{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+    .hero-left h2{
+
+        font-size:3rem;
+
+    }
+
+    .hero-left p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+}
+
+/*======ABOUT PAGE (about.html)=====*/
+
+#about-hero,
+#our-story,
+#our-mission{
+
+    width:90%;
+    max-width:900px;
+    margin:120px auto;
+    text-align:center;
+
+}
+
+#about-hero h2,
+#our-story h2,
+#our-mission h2{
+
+    font-size:3rem;
+    margin-bottom:25px;
+
+}
+
+#about-hero p,
+#our-story p,
+#our-mission p{
+
+    color:#CBD5E1;
+    line-height:2;
+    font-size:1.1rem;
+
+}
+
+#future-features{
+
+    width:90%;
+    max-width:1200px;
+    margin:120px auto;
+
+}
+
+#future-features h2{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+/*======CONTACT PAGE (contact.html)=====*/
+
+#contact-hero{
+
+    width:90%;
+    max-width:900px;
+    margin:120px auto;
+    text-align:center;
+
+}
+
+#contact-hero h2{
+
+    font-size:3rem;
+    margin-bottom:25px;
+
+}
+
+#contact-hero p{
+
+    color:#CBD5E1;
+    font-size:1.1rem;
+    line-height:2;
+
+}
+
+#contact-form{
+
+    width:90%;
+    max-width:700px;
+    margin:80px auto;
+
+}
+
+form{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+label{
+
+    font-weight:600;
+
+}
+
+input,
+textarea{
+
+    background:#1E293B;
+    border:1px solid rgba(255,255,255,.1);
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-size:1rem;
+    outline:none;
+    transition:.3s;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:#7C3AED;
+    box-shadow:0 0 15px rgba(124,58,237,.35);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/*======ROOM PAGE (study-room.html)=====*/
+
+#study-room{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+
+}
+
+.room-background{
+    width: 100%;
+    height: 100vh;
+}
+
+.room-background img{
+    width:85%;
+    max-width:1200px;
+    height:auto;
+    display:block;
+    margin:auto;
+
+}
+
+.room-window{
+
+}
+
+.room-desk{
+
+}
+
+.room-companion{
+
+}
+
+.room-ui{
+
+}
