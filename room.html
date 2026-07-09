@@ -26,29 +26,60 @@
 
     <main>
     <section id="study-room">
-        <div class="room-background">
-            <img src="image/background/room.png" alt="A cozy study room background">
+
+    <div class="room-scene">
+
+        <div class="room-sky">
+            <img src="image/background/window-day.png"
+                 alt="Outside scenery">
         </div>
 
-        <div class="room-window">
-            <img src="images/window-day.webp" alt="Window view of the outside">
+        <div class="room-background">
+            <img src="image/room/room.png"
+                 alt="Lo-Fi ChillSpace room">
         </div>
 
         <div class="room-companion">
-            <img src="images/satsuki-study.webp" alt="Satsuki sitting and studying">
-        </div>
+            </div>
 
         <div class="room-ui">
-            <div class="room-clock">12:22</div>
-            <div class="room-music">Lo-Fi ChillSpace</div>
-            <div class="room-timer">25:00</div>
+            <div class="clock-widget">
+                <p id="live-date"></p>
+                <p id="live-time">12:00 PM</p>
+        
+            </div>
         </div>
-    </section>
+    </div>
+        <div class="pomodoro-widget">
+            <h3>Pomodoro</h3>
+            <div id="timer-display">
+                25:00
+            </div>
+
+            <div class="timer-buttons">
+
+                <button id="start-btn">
+                    Start
+                </button>
+
+                <button id="pause-btn">
+                    Pause
+                </button>
+
+                <button id="reset-btn">
+                    Reset
+                </button>
+
+            </div>
+    </div>
+</section>
 </main>
 
     <footer>
         <p>&copy; 2026 Lo-Fi ChillSpace. All rights reserved.</p>
     </footer>
+
+<script src="js/room.js"></script>
 
 </body>
 </html>

@@ -482,42 +482,83 @@ textarea{
 
 }
 
-/*======ROOM PAGE (study-room.html)=====*/
+/*====== ROOM PAGE ======*/
 
 #study-room{
     display:flex;
     justify-content:center;
-    align-items:center;
-    padding:40px;
-
+    padding:30px;
 }
 
-.room-background{
-    width: 100%;
-    height: 100vh;
+.room-scene{
+    position:relative;
+    width:min(95vw, 1400px);
+    aspect-ratio:16/9;
+    margin:auto;
+}
+
+.room-sky, .room-background{
+    position:absolute;
+    inset:0;
+}
+
+.room-sky img, .room-background img{
+    width:100%;
+    height:100%;
+    display:block;
 }
 
 .room-background img{
-    width:85%;
-    max-width:1200px;
-    height:auto;
+    width:100%;
     display:block;
-    margin:auto;
-
-}
-
-.room-window{
-
-}
-
-.room-desk{
-
 }
 
 .room-companion{
-
+    position:absolute;
+    right:8%;
+    bottom:0;
+    z-index:3;
 }
 
 .room-ui{
+    position:absolute;
+    top:20px;
+    left:20px;
+    z-index:4;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.clock-widget{
+    background:linear-gradient( /*Gradient for fade effect, learned from internet*/
+        to right,
+        rgba(12,18,32,.55) 0%,
+        rgba(12,18,32,.25) 55%,
+        rgba(12,18,32,0) 100%,
+        transparent
+    );
+    backdrop-filter:blur(8px);
+    padding:18px 24px;
+    border-radius:18px;
+    color:whitesmoke;
+}
+
+/*======POMODORO WIDGET=====*/
+
+.pomodoro-widget{
+
+}
+
+#timer-display{
+
+}
+
+.timer-buttons{
+
+}
+
+.timer-buttons button{
 
 }
