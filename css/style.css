@@ -562,3 +562,83 @@ textarea{
 .timer-buttons button{
 
 }
+
+.time-adjuster{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    justify-content:center;
+    margin-bottom:16px;
+}
+
+.time-adjuster button{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    padding:0;
+}
+
+#work-minutes{
+    min-width:32px;
+    text-align:center;
+    font-weight:700;
+    font-size:1.1rem;
+}
+
+/*======NOTES WIDGET=====*/
+
+.notes-widget{
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+}
+
+.notes-widget:hover{
+    height:350px;
+}
+
+#notes-box{
+    width: 260px;
+    height: 150px;
+    resize: none;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/*======CALENDAR WIDGET=====*/
+.calendar-widget{
+    margin-top: 20px;
+    width: 300px;
+}
+
+#calendar-grid{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 6px;
+    margin-top: 12px;
+    width:100%;
+}
+
+.calendar-day{
+    text-align:center;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.08);
+}
+
+.today{
+    background: #7C3AED;
+    font-weight:bold;
+}
+
+/*MUSIC-WIDGET*/
+.music-widget{
+    display: flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.music-controls{
+    display:flex;
+    gap:10px;
+}

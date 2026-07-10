@@ -52,25 +52,76 @@
     </div>
         <div class="pomodoro-widget">
             <h3>Pomodoro</h3>
-            <div id="timer-display">
-                25:00
+
+            <div class="time-adjuster">
+                <button id="work-minus">-</button>
+                <span id="work-minutes">10</span>
+                <button id="work-plus">+</button>
             </div>
 
-            <div class="timer-buttons">
+            <div class="time-adjuster">
+                <button id="break-minus">-</button>
+                <span id="break-minutes">5</span>
+                <button id="break-plus">+</button>
+            </div>
 
+            <div class="time-adjuster">
+                <button id="session-minus">-</button>
+                <span id="session-count">4</span>
+                <button id="session-plus">+</button>
+            </div>
+            
+            <div id="timer-display">
+                10:00
+            </div>
+
+            <p id="session-display">
+                Session 1/4
+            </p>
+
+            <div class="timer-buttons">
                 <button id="start-btn">
                     Start
                 </button>
-
                 <button id="pause-btn">
                     Pause
                 </button>
-
                 <button id="reset-btn">
                     Reset
                 </button>
+                <button id="cancel-btn">
+                    Cancel
+                </button>
 
             </div>
+        </div>
+
+        <div class="notes-widget">
+            <img class="notes-frame" src="image/ui/notes-frame.png" alt="" aria-hidden="true">
+            <h3>Notes</h3>
+            <textarea id="notes-box" placeholder="Write something"></textarea>
+
+        <divclass="notes-buttons">
+            <button id="save-notes">Save Notes</button>
+            <button id="clear-notes">Clear Notes</button>
+        </div>
+    </div>
+
+    <div class="calendar-widget">
+        <h3>Calendar</h3>
+        <div id="calendar-month"> July 2026</div>
+        <div id="calendar-grid">
+
+        </div>
+    </div>
+    <div class="music-widget">
+        <p id="song-title">No Song Loaded</p>
+
+        <div class="music-controls">
+            <button id="prev-song">⏮</button>
+            <button id="play-song">▶</button>
+            <button id="next-song">⏭</button>
+        </div>
     </div>
 </section>
 </main>
@@ -80,6 +131,9 @@
     </footer>
 
 <script src="js/room.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/music.js"></script>
 
 </body>
 </html>
