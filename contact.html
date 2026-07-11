@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,14 @@
 
     <header>
         <nav>
-            <h1>Lo-Fi ChillSpace</h1>
-
+            <a href="index.html" class="logo">
+                <img src="image/logo/logo.png" alt="Lo-Fi ChillSpace">
+            </a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-
             <a href="room.html">
                 <button>Enter ChillSpace</button>
             </a>
@@ -29,38 +30,40 @@
 
     <main>
 
-    <section id="contact-hero">
-        <h2>Get in Touch</h2>
-        <p>
-            Have questions, suggestions, or simply want to say hello?
-            We'd love to hear from you.
-        </p>
-    </section>
+        <section id="contact-hero">
+            <h2>Get in Touch</h2>
+            <p>
+                Have questions, suggestions, or simply want to say hello?
+                We'd love to hear from you.
+            </p>
+        </section>
 
-    <section id="contact-form">
-        <form action="#">
+        <section id="contact-form">
+            <form action="mailto:ashtartarin107@gmail.com" method="POST"> <!--Form Purposes-->
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name">
+                <input type="hidden" name="_captcha" value="false">
 
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email">
+                <input type="hidden" name="_subject" value="Lo-Fi ChillSpace Contact">
 
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Enter the subject">
+                <input type="hidden" name="_next" value="https://github.com/Satsuki-9/lofi-chillspace">
 
-            <label for="message">Message</label>
-            <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Write your message here..."></textarea>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name">
 
-            <button type="submit">Send Message</button>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
 
-        </form>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter the subject">
 
-    </section>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Write your message here..."></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </section>
 
     </main>
 
@@ -68,4 +71,5 @@
         <p>&copy; 2026 Lo-Fi ChillSpace. All rights reserved.</p>
     </footer>
 </body>
-</html>about.html
+
+</html>
