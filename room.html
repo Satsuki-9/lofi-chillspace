@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo-Fi ChillSpace | Room</title>
-    <meta name="description" content="A cozy digital room for studying, relaxing, and spending time with your companion.">
+    <meta name="description"
+        content="A cozy digital room for studying, relaxing, and spending time with your companion.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/satsuki.css">
+
 </head>
+
 <body>
 
     <header>
@@ -25,115 +30,160 @@
     </header>
 
     <main>
-    <section id="study-room">
+        <section id="study-room">
 
-    <div class="room-scene">
+            <div class="room-scene">
 
-        <div class="room-sky">
-            <img src="image/background/window-day.png"
-                 alt="Outside scenery">
-        </div>
+                <!--background-->
+                <div class="room-sky">
+                    <img src="image/background/window-day.png" alt="Outside scenery">
+                </div>
 
-        <div class="room-background">
-            <img src="image/room/room.png"
-                 alt="Lo-Fi ChillSpace room">
-        </div>
+                <!--mainroom-->
+                <div class="room-background">
+                    <img src="image/room/room.png" alt="Lo-Fi ChillSpace Room">
+                </div>
 
-        <div class="room-companion">
+                <!--Companion here-->
+                <div class="room-companion">
+                    <div id="satsuki-dialogue">
+                        Hello! Let's do some tasks! ✨
+                    </div>
+
+                    <img id="satsuki-sprite" src="image/character/greeting.png" alt="Satsuki">
+                </div>
+
+                <!-- CLOCK -->
+                <div class="clock-widget">
+
+                    <p id="live-date"></p>
+                    <p id="live-time"></p>
+
+                </div>
+
+                <!-- POMODORO -->
+                <div class="pomodoro-widget">
+                    <h3>Pomodoro</h3>
+
+                    <!--WORK TIME-->
+                    <div class="pomodoro-card">
+                        <strong>Work Time</strong>
+                        <div class="work-display">
+                            <button id="work-minus">-</button>
+                            <span id="work-minutes">10</span>
+                            <button id="work-plus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- TIMER -->
+                    <div class="pomodoro-card">
+                        <div id="timer-display">
+                            10:00
+                        </div>
+                    </div>
+
+                    <!-- BREAK + SESSION -->
+                    <div class="pomodoro-card">
+                        <p>
+                            Break :
+                            <span id="break-minutes">5</span>
+                        </p>
+
+                        <p id="session-display">
+                            Work • Session 1/4
+                        </p>
+                    </div>
+
+                    <!-- CONTROLS -->
+                    <div class="timer-buttons">
+                        <button id="start-btn">
+                            ▶
+                        </button>
+
+                        <button id="pause-btn">
+                            ⏸
+                        </button>
+
+                        <button id="reset-btn">
+                            ↺
+                        </button>
+
+                        <button id="cancel-btn">
+                            ✕
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- LEFT PANEL -->
+                <div id="left-panel">
+
+                    <!-- NOTES -->
+
+                    <div class="notes-widget panel" id="notes-panel">
+
+                        <h3>Notes</h3>
+
+                        <textarea id="notes-box" placeholder="Write something..."></textarea>
+
+                        <div class="notes-buttons">
+
+                            <button id="save-notes">
+                                Save Notes
+                            </button>
+
+                            <button id="clear-notes">
+                                Clear Notes
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CALENDAR -->
+                    <div class="calendar-widget panel hidden" id="calendar-panel">
+                        <h3>Calendar</h3>
+                        <div id="calendar-month">
+                            July 2026
+                        </div>
+                        <div id="calendar-grid">
+                        </div>
+                    </div>
+
+                    <!-- MUSIC -->
+                    <div class="music-widget panel hidden" id="music-panel">
+                        <p id="song-title">No Song Loaded</p>
+                        <div class="music-controls">
+                            <button id="prev-song">⏮</button>
+                            <button id="play-song">▶</button>
+                            <button id="next-song">⏭</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SHORTCUT BAR -->
+
+                <div class="shortcut-bar">
+
+                    <img id="notes-toggle" src="image/ui/notes-frame.png" alt="Notes">
+
+                    <img id="calendar-toggle" src="image/ui/calendar-frame.png" alt="Calendar">
+
+                    <img id="music-toggle" src="image/ui/music-frame.png" alt="Music">
+
+                </div>
+
             </div>
 
-        <div class="room-ui">
-            <div class="clock-widget">
-                <p id="live-date"></p>
-                <p id="live-time">12:00 PM</p>
-        
-            </div>
-        </div>
-    </div>
-        <div class="pomodoro-widget">
-            <h3>Pomodoro</h3>
+        </section>
 
-            <div class="time-adjuster">
-                <button id="work-minus">-</button>
-                <span id="work-minutes">10</span>
-                <button id="work-plus">+</button>
-            </div>
-
-            <div class="time-adjuster">
-                <button id="break-minus">-</button>
-                <span id="break-minutes">5</span>
-                <button id="break-plus">+</button>
-            </div>
-
-            <div class="time-adjuster">
-                <button id="session-minus">-</button>
-                <span id="session-count">4</span>
-                <button id="session-plus">+</button>
-            </div>
-            
-            <div id="timer-display">
-                10:00
-            </div>
-
-            <p id="session-display">
-                Session 1/4
-            </p>
-
-            <div class="timer-buttons">
-                <button id="start-btn">
-                    Start
-                </button>
-                <button id="pause-btn">
-                    Pause
-                </button>
-                <button id="reset-btn">
-                    Reset
-                </button>
-                <button id="cancel-btn">
-                    Cancel
-                </button>
-
-            </div>
-        </div>
-
-        <div class="notes-widget">
-            <img class="notes-frame" src="image/ui/notes-frame.png" alt="" aria-hidden="true">
-            <h3>Notes</h3>
-            <textarea id="notes-box" placeholder="Write something"></textarea>
-
-        <divclass="notes-buttons">
-            <button id="save-notes">Save Notes</button>
-            <button id="clear-notes">Clear Notes</button>
-        </div>
-    </div>
-
-    <div class="calendar-widget">
-        <h3>Calendar</h3>
-        <div id="calendar-month"> July 2026</div>
-        <div id="calendar-grid">
-
-        </div>
-    </div>
-    <div class="music-widget">
-        <p id="song-title">No Song Loaded</p>
-
-        <div class="music-controls">
-            <button id="prev-song">⏮</button>
-            <button id="play-song">▶</button>
-            <button id="next-song">⏭</button>
-        </div>
-    </div>
-</section>
-</main>
-
-    <footer>
-        <p>&copy; 2026 Lo-Fi ChillSpace. All rights reserved.</p>
-    </footer>
-
-<script src="js/room.js"></script>
-<script src="js/notes.js"></script>
-<script src="js/calendar.js"></script>
-<script src="js/music.js"></script>
-
+        <script src="js/room.js"></script>
+        <script src="js/satsuki.js"></script>
+        <script src="js/notes.js"></script>
+        <script src="js/calendar.js"></script>
+        <script src="js/music.js"></script>
 </body>
+
 </html>

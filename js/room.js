@@ -44,11 +44,20 @@ function updateClock() {
         now.toLocaleDateString("en-US", options);
 
 }
+updateClock();
 setInterval(updateClock, 1000);
+/*=====SATSUKI=====*/
 
-/*==============================
-        POMODORO
-==============================*/
+function satsukiMode(mode){ //sprites
+
+    if(typeof window.setSatsukiMode === "function"){
+
+        window.setSatsukiMode(mode);
+
+    }
+
+}
+/*=====POMODORO=====*/
 //pomodoro timer
 const timerDisplay = document.getElementById("timer-display"); //buttons
 const startButton = document.getElementById("start-btn");
@@ -60,12 +69,7 @@ const workPlusButton = document.getElementById("work-plus");
 const workMinutesDisplay = document.getElementById("work-minutes");
 //session display
 const sessionDisplay = document.getElementById("session-display");
-const sessionMinusButton = document.getElementById("session-minus");
-const sessionPlusButton = document.getElementById("session-plus");
-const sessionCountText = document.getElementById("session-count");
 //break minutes buttons and display
-const breakMinusButton = document.getElementById("break-minus");
-const breakPlusButton = document.getElementById("break-plus");
 const breakMinutesDisplay = document.getElementById("break-minutes");
 //cancel button
 const cancelButton = document.getElementById("cancel-btn");
@@ -77,7 +81,7 @@ let isRunning = false;
 let workMinutes = 10;
 let seconds = workMinutes * 60;
 let breakMinutes = 5;
-let maxSessions = 4;
+const maxSessions = 4;
 let currentSession = 1;
 let isBreak = false;
 
@@ -92,13 +96,13 @@ function updateWorkMinutesDisplay() {
     workMinutesDisplay.textContent = workMinutes;
 }
 
-function updateSessionDisplay() {
-    sessionCountText.textContent = maxSessions;
+function updateSessionDisplay(){
 
     sessionDisplay.textContent =
-    isBreak
-    ? `Break • Session ${currentSession}/${maxSessions}`
-    : `Work • Session ${currentSession}/${maxSessions}`;
+        isBreak
+        ? `Break • Session ${currentSession}/${maxSessions}`
+        : `Work • Session ${currentSession}/${maxSessions}`;
+
 }
 
 function updateBreakMinutesDisplay() {
@@ -108,6 +112,7 @@ function updateBreakMinutesDisplay() {
 function startTimer() { //timer flow starts here
     if (isRunning) return;
     isRunning = true;
+    satsukiMode("work");
     timer = setInterval(() => {
         seconds--;
         updateTimerDisplay();
@@ -116,6 +121,7 @@ function startTimer() { //timer flow starts here
             isRunning = false;
             if(!isBreak) {//breakmode
                 isBreak = true;
+                satsukiMode("break");
                 seconds = breakMinutes * 60;
                 alert("Work Session Finished! Time for a Break!");
 
@@ -143,6 +149,7 @@ function startTimer() { //timer flow starts here
                     return;
                 }
                 seconds = workMinutes * 60; //Loop session
+                satsukiMode("work");
                 alert(`Session ${currentSession} begins! Time to focus!`);
                 updateSessionDisplay();
                 updateTimerDisplay();
@@ -163,6 +170,7 @@ function pauseTimer() {
 function resetTimer() {
     clearInterval(timer);
     isRunning = false;
+    satsukiMode("idle");
     seconds = isBreak //breakMinutes > 0 Detect if it's break time or work time and set seconds accordingly
     ? breakMinutes * 60
     : workMinutes * 60;
@@ -173,6 +181,7 @@ function resetTimer() {
 function cancelTimer() {
     clearInterval(timer);
     isRunning = false;
+    satsukiMode("idle");
     currentSession = 1;
     isBreak = false;
     seconds = workMinutes * 60;
@@ -197,37 +206,6 @@ workPlusButton.addEventListener("click", () => {
     }
 });
 
-breakMinusButton.addEventListener("click", () => {
-    if (breakMinutes > 0) {
-        breakMinutes--;
-        
-        updateBreakMinutesDisplay();
-        resetTimer();
-    }
-});
-
-breakPlusButton.addEventListener("click", () => {
-    if (breakMinutes < 60) {
-        breakMinutes++;
-        updateBreakMinutesDisplay();
-        resetTimer();
-    }
-});
-
-sessionMinusButton.addEventListener("click", () => {
-    if (maxSessions > 1) {
-        maxSessions--;
-        updateSessionDisplay();
-    } 
-});
-
-sessionPlusButton.addEventListener("click", () => {
-    if (maxSessions < 10) {
-        maxSessions++;
-        updateSessionDisplay();
-    }
-});
-
 startButton.addEventListener("click", startTimer);
 pauseButton.addEventListener("click", pauseTimer);
 resetButton.addEventListener("click", resetTimer);
@@ -240,6 +218,46 @@ updateBreakMinutesDisplay();
 updateSessionDisplay();
 updateTimerDisplay();
 
+/*PANEL SYSTEM CONTROL! -- DO NOT CHANGE*/
 
+const notesPanel = document.getElementById("notes-panel");  //SET PANELS & TOGGLES
+const calendarPanel =document.getElementById("calendar-panel");
+const musicPanel = document.getElementById("music-panel");
+const notesToggle = document.getElementById("notes-toggle");
+const calendarToggle = document.getElementById("calendar-toggle");
+const musicToggle = document.getElementById("music-toggle");
+
+function hidePanels(){
+    notesPanel.classList.add("hidden");
+    calendarPanel.classList.add("hidden");
+    musicPanel.classList.add("hidden");
+}
+
+notesToggle.addEventListener("click",()=>{
+    const hidden =
+    notesPanel.classList.contains("hidden");
+    hidePanels();
+    if(hidden){
+        notesPanel.classList.remove("hidden");
+    }
+});
+
+calendarToggle.addEventListener("click",()=>{
+    const hidden =
+    calendarPanel.classList.contains("hidden");
+    hidePanels();
+    if(hidden){
+        calendarPanel.classList.remove("hidden");
+    }
+});
+
+musicToggle.addEventListener("click",()=>{
+    const hidden =
+    musicPanel.classList.contains("hidden");
+    hidePanels();
+    if(hidden){
+        musicPanel.classList.remove("hidden");
+    }
+});
 
 
